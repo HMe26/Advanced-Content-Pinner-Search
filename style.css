@@ -1,0 +1,590 @@
+/* --- Google Fonts (Modern & Clean) --- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap");
+
+/* --- Custom Color Palette Variables --- */
+:root {
+  --primary-color: #6a0572; /* Deep Purple */
+  --primary-hover: #4e0354;
+  --success-color: #28a745; /* Green */
+  --success-hover: #1e7e34;
+  --danger-color: #dc3545; /* Red */
+  --danger-hover: #c82333;
+  --dark-bg: #2b2d42; /* Dark Grayish Blue */
+  --light-bg: #edf2f7; /* Off-white / Light Gray */
+  --text-color: #2d3748; /* Dark text */
+  --muted-text-color: #718096; /* Muted gray text */
+  --card-bg: #ffffff;
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --highlight-color: #ffda00; /* Vibrant Yellow */
+  --highlight-text: #2d3748;
+}
+
+/* --- General Body Styles --- */
+body {
+  background-color: var(--light-bg);
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+p {
+  color: var(--muted-text-color);
+}
+
+hr {
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.hr-gradient {
+  border: none;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+  margin: 3rem 0;
+  opacity: 0.7;
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: var(--dark-bg) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand .fa-thumbtack {
+  transform: rotate(20deg); /* Slight rotation for icon */
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .fa-thumbtack {
+  transform: rotate(0deg) scale(1.1);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    #8a2be2 100%
+  ); /* Purple to Violet gradient */
+  padding: 100px 0;
+  color: white;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  position: relative; /* For potential background effects */
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotateBg 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes rotateBg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.hero-section p.lead {
+  font-size: 1.75rem;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- Card Styles --- */
+.card {
+  border-radius: 20px; /* Even more rounded corners */
+  border: none;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  z-index: 1; /* Ensure card is above background effects */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* More pronounced lift */
+  box-shadow: var(--shadow-medium); /* Stronger shadow on hover */
+}
+
+.card-fade-in.animate__zoomIn {
+  animation-duration: 0.8s; /* Slightly slower for a smoother feel */
+}
+
+/* --- Custom Colors for Headings and Buttons --- */
+.text-primary-custom {
+  color: var(--primary-color) !important;
+}
+
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(106, 5, 114, 0.4); /* Custom shadow for primary */
+}
+
+.text-success-custom {
+  color: var(--success-color) !important;
+}
+
+.btn-success-custom {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-success-custom:hover {
+  background-color: var(--success-hover);
+  border-color: var(--success-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4); /* Custom shadow for success */
+}
+
+.text-secondary-custom {
+  color: var(--muted-text-color) !important;
+}
+
+.btn-danger-custom {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-danger-custom:hover {
+  background-color: var(--danger-hover);
+  border-color: var(--danger-hover);
+  transform: translateY(-1px);
+}
+
+/* --- Modern Input Fields --- */
+.form-control.modern-input {
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control.modern-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(106, 5, 114, 0.2); /* Soft shadow on focus */
+}
+
+.modern-file-upload {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0 10px 10px 0 !important;
+  transition: background-color 0.3s ease;
+}
+.modern-file-upload:hover {
+  background-color: var(--primary-hover);
+  cursor: pointer;
+}
+
+/* --- Pinned Item Cards (Adjusted for responsiveness) --- */
+/* Default for smaller screens: full width */
+.pinned-item-card {
+  background-color: var(--card-bg);
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  animation: fadeInScale 0.7s ease-out forwards;
+  transition: all 0.3s ease;
+  height: auto; /* Allow height to adjust based on content */
+}
+
+.pinned-item-card .card-title {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.pinned-item-card .card-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  max-height: unset; /* Remove fixed max-height for main content display */
+  overflow: auto; /* Enable scroll if content is too long */
+  text-overflow: unset; /* Remove ellipsis for main content display */
+  position: relative;
+  padding-right: 5px; /* Space for scrollbar */
+  white-space: pre-wrap; /* Preserve formatting for text content */
+}
+
+/* Remove fade effect for main content display, as it's scrollable */
+.pinned-item-card .card-text::after {
+  display: none;
+}
+
+/* --- Search Highlight --- */
+.search-highlight {
+  background-color: var(--highlight-color);
+  color: var(--highlight-text);
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 5px;
+  animation: highlightPulse 1.5s infinite alternate;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(255, 218, 0, 0.4);
+}
+
+/* --- Animations --- */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes highlightPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 218, 0, 0.7);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(255, 218, 0, 0);
+    transform: scale(1.03);
+  }
+}
+
+/* Custom animation for the pin button */
+@keyframes pinButtonPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(106, 5, 114, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 25px rgba(106, 5, 114, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(106, 5, 114, 0);
+  }
+}
+
+#pinContentBtn.animate__pulse.animate__infinite {
+  animation: pinButtonPulse 2s infinite ease-in-out;
+}
+
+/* --- Loading Spinner --- */
+#searchLoading .spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 0.3em;
+}
+
+/* --- Empty States (No Content/Results) --- */
+#noContentMessage,
+#noResultsMessage {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 40px;
+  margin-top: 30px;
+  box-shadow: var(--shadow-light);
+  display: flex; /* Use flexbox for icon and text alignment */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-text-color);
+}
+#noContentMessage i,
+#noResultsMessage i {
+  color: var(--muted-text-color);
+  opacity: 0.7;
+  margin-bottom: 15px;
+  font-size: 3.5rem; /* Larger icons */
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: var(--dark-bg) !important;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 30px 0;
+  margin-top: 5rem;
+  font-size: 0.95rem;
+}
+
+.footer .social-links a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  color: white;
+}
+
+/* --- Modal Styles --- */
+.modal-content {
+  border-radius: 15px;
+  background-color: var(--card-bg);
+}
+
+.modal-header.bg-danger-custom {
+  background-color: var(--danger-color) !important;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: white;
+}
+
+.modal-title {
+  color: white !important;
+  font-weight: 600;
+}
+
+.modal-body p {
+  color: var(--text-color);
+}
+
+.btn-close-white {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* --- Search Result Card Specifics --- */
+.search-result-card .card-text.full-content-display {
+  max-height: 400px; /* Allow more height for content on larger screens */
+  overflow-y: auto;
+  padding-right: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fcfcfc;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+/* Optional: style for scrollbar (for Webkit browsers like Chrome/Safari) */
+.search-result-card .card-text.full-content-display::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-result-card .card-text.full-content-display::-webkit-scrollbar-track {
+  background: var(--light-bg);
+  border-radius: 10px;
+}
+
+.search-result-card .card-text.full-content-display::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.search-result-card
+  .card-text.full-content-display::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* --- Responsive Adjustments for Content Cards and Centering --- */
+
+/* Base styles for the content sections (Pinned and Search Results) */
+#pinnedContentDisplay,
+#searchResultsDisplay {
+  display: flex; /* Use flexbox for better alignment */
+  flex-wrap: wrap; /* Allow items to wrap to next line */
+  justify-content: center; /* Center items horizontally */
+  align-items: flex-start; /* Align items to the start of the cross-axis */
+  padding: 0 15px; /* Add some padding to the sides */
+}
+
+/* Apply flex basis to the column container, not the card itself */
+#pinnedContentDisplay > .col-md-6,
+#pinnedContentDisplay > .col-lg-4,
+#searchResultsDisplay > .col-md-6,
+#searchResultsDisplay > .col-lg-4 {
+  /* These Bootstrap column classes are used in JS, we override their width here */
+  flex: 0 0 100%; /* Default to full width on small screens */
+  max-width: 100%;
+  /* Add horizontal padding between columns to create gap */
+  padding: 0 15px; /* This padding adds spacing */
+}
+
+/* Centering for the card itself on larger screens */
+.pinned-item-card {
+  margin-left: auto; /* Auto margins for horizontal centering */
+  margin-right: auto; /* Auto margins for horizontal centering */
+}
+
+/* Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section p.lead {
+    font-size: 1rem;
+  }
+  .card {
+    padding: 1rem !important;
+    border-radius: 15px;
+  }
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+  .footer {
+    padding: 20px 0;
+    font-size: 0.85rem;
+  }
+
+  /* Cards should be full width on small screens */
+  #pinnedContentDisplay > .col-md-6,
+  #searchResultsDisplay > .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Medium devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section p.lead {
+    font-size: 1.2rem;
+  }
+  .card {
+    padding: 1rem !important;
+    border-radius: 15px;
+  }
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+  .footer {
+    padding: 20px 0;
+    font-size: 0.85rem;
+  }
+
+  /* On medium screens, let's make them take 90% of the container width to look centered and large */
+  #pinnedContentDisplay > .col-md-6,
+  #searchResultsDisplay > .col-md-6 {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+}
+
+/* Large devices (desktops, 768px and up) - This is where we make them wider and truly centered */
+@media (min-width: 768px) {
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+  .hero-section p.lead {
+    font-size: 1.4rem;
+  }
+
+  /* On larger screens, the cards will occupy a set max-width for readability */
+  #pinnedContentDisplay > .col-md-6,
+  #pinnedContentDisplay > .col-lg-4,
+  #searchResultsDisplay > .col-md-6,
+  #searchResultsDisplay > .col-lg-4 {
+    /* Instead of fixed 100%, we set a max-width on the card itself
+           and rely on flexbox's justify-content: center on the row container.
+           This allows for a single, wide, centered column. */
+    flex: 0 0 100%; /* Keep the column itself full width to allow auto margins on inner card */
+    max-width: 100%;
+  }
+
+  .pinned-item-card {
+    max-width: 800px; /* Optimal width for readability on desktop, adjust as needed */
+    width: 100%; /* To ensure it takes full width of its column */
+  }
+
+  .pinned-item-card .card-text {
+    max-height: 500px; /* Allow even more height for content on larger screens */
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .hero-section h1 {
+    font-size: 4rem;
+  }
+  .hero-section p.lead {
+    font-size: 1.75rem;
+  }
+
+  .pinned-item-card {
+    max-width: 900px; /* Slightly wider on very large screens */
+  }
+}
